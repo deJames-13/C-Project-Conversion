@@ -102,7 +102,7 @@ int main()
             break;
         }
 
-    } while (!(iOption <= 0));
+    } while (iOption > 0);
 
     return 0;
 }

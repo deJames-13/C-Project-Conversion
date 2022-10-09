@@ -6,6 +6,7 @@ int main()
 {
     char *log = "";
     int iOption, iDecimal;
+    do
     {
         system("cls");
         printf("*****************************************\n");
@@ -129,9 +130,7 @@ int main()
             log = "[Logs]\n[Warning!]\tThat is not in the Option!!\n[ERROR]\t\tPlease Try Again!\n";
             break;
         }
-    }
-    while (!(iOption <= 0))
-        ;
+    } while (iOption > 0);
 
     return 0;
 }
