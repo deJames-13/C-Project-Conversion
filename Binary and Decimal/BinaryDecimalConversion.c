@@ -43,10 +43,10 @@ int main()
                 strcpy(temp, "");
                 sprintf(temp, "%d", quot % 2);
                 strcat(current, temp);
-                strrev(current);
 
                 quot /= 2;
             }
+            strrev(current);
 
             printf("[Output]: %s\n", current);
             goto repeat;
