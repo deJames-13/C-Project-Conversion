@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <windows.h>
 
 #define SIZE 25
 
@@ -8,15 +9,23 @@ int main()
 {
     int iOption, iDecimal;
     char sBinary[SIZE] = "";
-    printf("*****************************************\n");
-    printf("*\tBinary - Decimal Conversion\n");
-    printf("*****************************************\n");
-    printf("\t[Options]\n");
-    printf("[1] ->\tDecimal to Binary\n");
-    printf("[2] ->\tBinary to Decimal\n");
-    printf("*****************************************\n");
+    char *log = "";
     do
     {
+        system("cls");
+        printf("*****************************************\n");
+        printf("*\tBinary - Decimal Conversion\n");
+        printf("*****************************************\n");
+        printf("\t[Options]\n");
+        printf("[1] ->\tDecimal to Binary\n");
+        printf("[2] ->\tBinary to Decimal\n");
+        if (log || log != "")
+        {
+            printf("\n%s\n", log);
+        }
+        printf("*****************************************\n");
+        log = "";
+        iOption = -1;
         printf("\n->\tChoose an option (0 to quit): ");
         scanf("%d", &iOption);
         switch (iOption)
@@ -26,6 +35,7 @@ int main()
             break;
         case 1:
         repeat:
+            iDecimal = -1;
             printf("\nInput (-1 to stop): ");
             scanf("%d", &iDecimal);
             if (iDecimal < 0)
@@ -85,12 +95,14 @@ int main()
             printf("[Output]: %d\n", calc);
 
             goto repeat2;
-
+        case -1:
+            printf("\n[Warning!]\tUnrecognized Input!!\n[ERROR]\t\tProgram crashed!\n");
+            break;
         default:
-            printf("That is not in the Option!!\n");
+            log = "[Logs]\n[Warning!]\tThat is not in the Option!!\n[ERROR]\t\tPlease Try Again!\n";
             break;
         }
-    } while (iOption);
+    } while (!(iOption <= 0));
 
     return 0;
 }
