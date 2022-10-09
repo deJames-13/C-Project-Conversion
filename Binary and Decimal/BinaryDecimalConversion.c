@@ -19,7 +19,7 @@ int main()
         printf("\t[Options]\n");
         printf("[1] ->\tDecimal to Binary\n");
         printf("[2] ->\tBinary to Decimal\n");
-        if (log || log != "")
+        if (log && log != "")
         {
             printf("\n%s\n", log);
         }
