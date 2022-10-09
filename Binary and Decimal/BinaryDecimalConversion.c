@@ -3,7 +3,7 @@
 #include <math.h>
 #include <windows.h>
 
-#define SIZE 25
+#define SIZE 64
 
 int main()
 {
@@ -19,23 +19,26 @@ int main()
         printf("\t[Options]\n");
         printf("[1] ->\tDecimal to Binary\n");
         printf("[2] ->\tBinary to Decimal\n");
-        if (log && log != "")
+        if (log != "")
         {
             printf("\n%s\n", log);
         }
         printf("*****************************************\n");
         log = "";
-        iOption = -1;
+        iOption = -1; // This iniatilizes the option to catch an error due to string input. See case -1 in switch.
         printf("\n->\tChoose an option (0 to quit): ");
         scanf("%d", &iOption);
         switch (iOption)
         {
+        case -1:
+            printf("\n[Warning!]\tForbidden String Input!!\n[ERROR]\t\tProgram crashed!\n");
+            break;
         case 0:
             printf("\n\t[Process terminated.]\n");
             break;
         case 1:
         repeat:
-            iDecimal = -1;
+            iDecimal = -1; // This iniatilizes the input to catch an error due to string input.
             printf("\nInput (-1 to stop): ");
             scanf("%d", &iDecimal);
             if (iDecimal < 0)
@@ -50,12 +53,16 @@ int main()
             int quot = iDecimal;
             while (quot != 0)
             {
+                /*
+                Creates an empty temp string and concats it to the current string
+                */
                 strcpy(temp, "");
                 sprintf(temp, "%d", quot % 2);
                 strcat(current, temp);
 
                 quot /= 2;
             }
+            // Reverses the current string so that it follows the MSV to LSV in conversion
             strrev(current);
 
             printf("[Output]: %s\n", current);
@@ -95,9 +102,7 @@ int main()
             printf("[Output]: %d\n", calc);
 
             goto repeat2;
-        case -1:
-            printf("\n[Warning!]\tForbidden String Input!!\n[ERROR]\t\tProgram crashed!\n");
-            break;
+
         default:
             log = "[Logs]\n[Warning!]\tThat is not in the Option!!\n[ERROR]\t\tPlease Try Again!\n";
             break;
