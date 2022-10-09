@@ -96,7 +96,7 @@ int main()
 
             goto repeat2;
         case -1:
-            printf("\n[Warning!]\tUnrecognized Input!!\n[ERROR]\t\tProgram crashed!\n");
+            printf("\n[Warning!]\tUnrecognized String Input!!\n[ERROR]\t\tProgram crashed!\n");
             break;
         default:
             log = "[Logs]\n[Warning!]\tThat is not in the Option!!\n[ERROR]\t\tPlease Try Again!\n";
