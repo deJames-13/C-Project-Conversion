@@ -48,7 +48,7 @@ int main()
                 break;
             }
             char current[] = "";
-            char temp[64];
+            char temp[SIZE];
             int quot = iDecimal;
 
             while (quot)
@@ -73,7 +73,7 @@ int main()
             }
             strrev(sOctal);
             int calc = 0;
-            char temp2[64];
+            char temp2[64] = "";
 
             for (int i = 0; i < SIZE; i++)
             {
