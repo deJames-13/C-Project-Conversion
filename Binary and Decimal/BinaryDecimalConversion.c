@@ -62,7 +62,7 @@ int main()
             goto repeat;
         case 2:
         repeat2:
-            printf("\nInput (q to stop): ");
+            printf("\nInput (q for menu, ctrl+c to stop): ");
             scanf("%s", &sBinary);
 
             if (sBinary[0] == 'q')
@@ -96,7 +96,7 @@ int main()
 
             goto repeat2;
         case -1:
-            printf("\n[Warning!]\tUnrecognized String Input!!\n[ERROR]\t\tProgram crashed!\n");
+            printf("\n[Warning!]\tForbidden String Input!!\n[ERROR]\t\tProgram crashed!\n");
             break;
         default:
             log = "[Logs]\n[Warning!]\tThat is not in the Option!!\n[ERROR]\t\tPlease Try Again!\n";
